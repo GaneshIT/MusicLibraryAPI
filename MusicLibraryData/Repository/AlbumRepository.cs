@@ -1,4 +1,5 @@
-﻿using MusicLibraryEntity;
+﻿using Microsoft.Extensions.Logging;
+using MusicLibraryEntity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,16 +10,30 @@ namespace MusicLibraryData.Repository
 {
     public class AlbumRepository : IAlbumRepository
     {
+        ILogger<AlbumRepository> _logger;
         private readonly MusicLibraryContext _musicLibraryContext;
-        public AlbumRepository(MusicLibraryContext musicLibraryContext  )
+        public AlbumRepository(MusicLibraryContext musicLibraryContext,
+            ILogger<AlbumRepository> logger)
         {
             _musicLibraryContext = musicLibraryContext;
+            _logger = logger;
         }
         public void Create(Album album)
         {
-            //insert into albums values(album.id,album.name,album.desc)
-            _musicLibraryContext.albums.Add( album );
-            _musicLibraryContext.SaveChanges();//Execute sql
+            try
+            {
+                _logger.LogInformation("Db entry");
+                //insert into albums values(album.id,album.name,album.desc)
+                _musicLibraryContext.albums.Add(album);
+                _musicLibraryContext.SaveChanges();//Execute sql
+                _logger.LogInformation("Db completed");
+
+            }
+            catch (Exception ex) 
+            {
+                //Log exception into filesystem
+                _logger.LogCritical("Critical:"+ex.Message);
+            }
         }
         public void Delete(int id)
         {
@@ -48,3 +63,11 @@ namespace MusicLibraryData.Repository
         }
     }
 }
+
+
+
+/* Logging framework
+ * log4net
+ * nlog
+ * serilog
+ */

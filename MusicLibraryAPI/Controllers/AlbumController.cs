@@ -10,9 +10,12 @@ namespace MusicLibraryAPI.Controllers
     public class AlbumController : ControllerBase
     {
         private readonly IAlbumService _albumService;
-        public AlbumController(IAlbumService albumService)
+        ILogger<AlbumController> _logger;
+        public AlbumController(IAlbumService albumService,
+            ILogger<AlbumController> logger)
         {
             _albumService = albumService;
+            _logger = logger;
         }
         [HttpPost]
         public IActionResult Create(Album album)
@@ -23,8 +26,10 @@ namespace MusicLibraryAPI.Controllers
         [HttpGet]
         public IActionResult GetAll()
         {
+            _logger.LogInformation("Get Albums");
             //calling business
             List<Album> albums = _albumService.GetAll();
+            _logger.LogInformation("Retrieved albums");
             return Ok(albums);//http response
         }
 
