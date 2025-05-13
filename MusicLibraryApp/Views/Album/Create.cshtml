@@ -1,0 +1,43 @@
+﻿@model MusicLibraryEntity.Album
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create Album</h1>
+<hr />
+
+<div class="container">
+    <form method="post">
+        <div class="form-group">
+            <label>Album Name</label>
+            <input asp-for="Name" type="text" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Album Description</label>
+            <input asp-for="Description" type="text" class="form-control" />
+        </div>
+        <input type="submit" value="Save" class="btn btn-success" />
+        <input type="button" value="Reset" class="btn btn-secondary" />
+    </form>
+</div>
+<div>
+@if (ViewBag.status == "Ok")
+{
+    <div class="alert alert-success">
+        @ViewBag.message
+    </div>
+}
+else if (ViewBag.status == "Error")
+{
+    <div class="alert alert-danger">
+        @ViewBag.message
+    </div>
+}
+</div>
+
+@* <script>
+    fetch("http://localhost:5000/api/Album/Cream",{
+        method:"POST",
+        data:JSON.stringify({})
+    })
+</script> *@

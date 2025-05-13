@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicLibraryData", "MusicLi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicLibraryBusiness", "MusicLibraryBusiness\MusicLibraryBusiness.csproj", "{FC2C8B68-0E48-44DB-9A2F-AAD53EA8B506}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicLibraryApp", "MusicLibraryApp\MusicLibraryApp.csproj", "{71E98D34-8F5C-4BA0-9E3E-28D46EF109ED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{FC2C8B68-0E48-44DB-9A2F-AAD53EA8B506}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC2C8B68-0E48-44DB-9A2F-AAD53EA8B506}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC2C8B68-0E48-44DB-9A2F-AAD53EA8B506}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71E98D34-8F5C-4BA0-9E3E-28D46EF109ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71E98D34-8F5C-4BA0-9E3E-28D46EF109ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71E98D34-8F5C-4BA0-9E3E-28D46EF109ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71E98D34-8F5C-4BA0-9E3E-28D46EF109ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

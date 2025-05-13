@@ -1,0 +1,40 @@
+﻿@model IEnumerable<MusicLibraryEntity.Album>
+@{
+    ViewData["Title"] = "GetAlbums";
+}
+
+<h1>Album List</h1>
+<hr />
+<div class="container">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr><th>Id</th><th>Name</th><th>Description</th>
+                <th>Edit</th><th>Delete</th></tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (var item in Model)
+                {
+                 <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Name</td>
+                        <td>@item.Description</td>
+                        <td>
+                            <a class="btn btn-primary" asp-action="EditAlbum" asp-route-id="@item.Id">Edit</a>
+                        </td>
+                        <td>
+                            <button class="btn btn-danger">Delete</button>
+                        </td>
+                 </tr>   
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+
+                       

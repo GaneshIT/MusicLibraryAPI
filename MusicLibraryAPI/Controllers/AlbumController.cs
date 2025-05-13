@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MusicLibraryBusiness.Services;
 using MusicLibraryEntity;
@@ -7,6 +8,7 @@ namespace MusicLibraryAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    //[Authorize]// Token
     public class AlbumController : ControllerBase
     {
         private readonly IAlbumService _albumService;
